@@ -1,0 +1,41 @@
+Build a Linux diagnostic toolkit using Bash. The scripts should collect system information, check disk usage
+and perform basic network checks.
+Required structure
+assignment-1/
+■■■ README.md
+■■■ system-info.sh
+■■■ disk-check.sh
+■■■ network-check.sh
+■■■ grade.sh
+■■■ logs/
+■■■ .gitkeep
+system-info.sh
+Display hostname, current user, date/time, operating system, kernel version, uptime, CPU information, memory
+information and current working directory. Values must be obtained from the system at runtime.
+disk-check.sh
+./disk-check.sh <threshold> [path]
+• Default path: /.
+• Threshold must be an integer from 1 to 100.
+• Display the disk usage percentage.
+• Exit 0 when usage is below the threshold.
+• Exit non-zero when usage reaches or exceeds the threshold.
+• Exit 2 for invalid input.
+network-check.sh
+./network-check.sh <hostname-or-ip> [port]
+• Validate the host argument.
+• Resolve the host and display the resolved address.
+• Perform a basic connectivity check.
+• Display network interface information.
+• If a port is supplied, check TCP connectivity.
+• Valid ports are 1–65535.
+• Invalid input must return a non-zero result and should not crash the script.
+Logging
+Create useful logs under logs/. Entries should contain a timestamp and a description of the operation.
+Git
+• At least 5 meaningful commits.
+• Use at least one non-main feature branch.
+• Merge the feature branch into main/master.
+• Use clear commit messages.
+grade.sh
+The supplied Assignment 1 grader checks required files, Bash syntax, executable permissions, system-info output,
+disk argument validation, network validation, logging and basic Git history
